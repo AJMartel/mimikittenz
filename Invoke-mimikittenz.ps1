@@ -589,7 +589,7 @@ Add-Type -TypeDefinition $Source2 -Language CSharp -CompilerParameters $inmem
 $matchesFound=[mimikittenz.MemProcInspector]::InspectManyProcs("iexplore","chrome","firefox","outlook","MicrosoftEdge","EXCEL","WORD","teamviewer")
 [mimikittenz.MemProcInspector]::SaveToFile("$HOME/mkw.out",$matchesFound)
 
-"RAM scan complete, check $HOME/mkw.out"
+"RAM scan complete, check $HOME\mkw.out"
 write-output $matchesFound
 }
 
