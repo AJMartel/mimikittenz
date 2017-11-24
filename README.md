@@ -37,6 +37,7 @@ Currently `mimikittenz` is able to extract the following credentials from memory
 - Juniper SSL-VPN
 - Citrix NetScaler
 - Remote Desktop Web Access 2012
+- Teamviewer 11+
 
 #####Developement#####
 
@@ -77,4 +78,4 @@ https://creativecommons.org/licenses/by/4.0/
 `[mimikittenz.MemProcInspector]::InspectManyProcs("iexplore","chrome","firefox")`
 # Contributions
 
-I'd love to see the list of regex's and target processe's grow in order to build a comprehensive post-exploitaiton hit list.
+I'd love to see the list of regex's and target processes grow in order to build a comprehensive post-exploitation hit list.
